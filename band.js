@@ -6,13 +6,13 @@ const nouns = ["Penguins", "Wizards", "Socks", "Robots", "Bananas", "Crows", "Ni
 
 
  function getAdjective() {
-    const index = Math.floor(Math.random() * adjectives.length);
+    const index = Math.floor(Math.random()*adjectives.length);
     return adjectives[index];
  // TODO: return a random adjective from the adjectives array
  }
 
  function getNoun() {
-    const index = Math.floor(Math.random() * nouns.length);
+    const index = Math.floor(Math.random()*nouns.length);
     return nouns[index];
  // TODO: return a random noun from the nouns array
  }
@@ -27,4 +27,4 @@ const nouns = ["Penguins", "Wizards", "Socks", "Robots", "Bananas", "Crows", "Ni
    bandNameElement.textContent = 'The ' + getAdjective() + getNoun();
  }
 
- document.getElementById("generate-btn").addEventListener("click", generateBandName);
+ document.getElementById("generate-btn").addEventListener("click",generateBandName);
