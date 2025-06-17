@@ -4,15 +4,82 @@
 
  <title>Band Name Generator</title>
 
-<script src="band.js"></script>
+ <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @layer components {
+      @keyframes ripple {
+        0% { transform: scale(1); opacity: 0.4; }
+        100% { transform: scale(2.5); opacity: 0; }
+      }
+
+      @keyframes colorChange {
+        0%, 100% {
+          background-color: #3b82f6; /* blue-500 */
+          border-color: #3b82f6;
+          outline-color: #3b82f6;
+          box-shadow: 0 4px 10px rgba(59, 130, 246, 0.7);
+        }
+        50% {
+          background-color: #ef4444; /* red-500 */
+          border-color: #ef4444;
+          outline-color: #ef4444;
+          box-shadow: 0 4px 10px rgba(239, 68, 68, 0.7);
+        }
+      }
+
+ @keyframes imageFade {
+        0%, 33% {
+          opacity: 1;
+          background-image: url('https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d');
+        }
+        34%, 66% {
+          opacity: 0;
+          background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');
+        }
+        67%, 100% {
+          opacity: 1;
+          background-image: url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e');
+        }
+      }
+
+         .animate-ripple {
+        animation: ripple 4s linear infinite;
+      }
+
+      .animate-colorChange {
+        animation: colorChange 6s ease-in-out infinite;
+      }
+
+      .animate-imageFade {
+        animation: imageFade 12s ease-in-out infinite;
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+  </style>
 
  </head>
 
- <body>
+ <body class="bg-gray-200 dark:bg-black text-gray-900 dark:text-gray-100 font-sans">
+
+      <!-- Hero Section with Animation -->
+  <section id="home" class="w-full h-screen relative pt-20 flex items-center justify-center overflow-hidden">
+
+      <div class="absolute rounded-full border border-solid shadow-xl w-[250px] h-[250px] opacity-20 animate-ripple animate-colorChange"></div>
+      <div class="absolute rounded-full border border-solid shadow-xl w-[320px] h-[320px] opacity-15 animate-ripple animate-colorChange"></div>
+      <div class="absolute rounded-full border border-solid shadow-xl w-[390px] h-[390px] opacity-10 animate-ripple animate-colorChange"></div>
+      <div class="absolute rounded-full border border-solid shadow-xl w-[460px] h-[460px] opacity-8 animate-ripple animate-colorChange"></div>
+      <div class="absolute rounded-full border border-solid shadow-xl w-[530px] h-[530px] opacity-5 animate-ripple animate-colorChange"></div>
+      <div class="absolute rounded-full border border-solid shadow-xl w-[600px] h-[600px] opacity-2 animate-ripple animate-colorChange"></div>
 
  <div>
-
- <h1>Band Name Generator</h1>
+ <div class="relative z-20 text-center max-w-3xl px-4">
+ <h1 class="text-5xl font-extrabold mb-4">Band Name Generator</h1>
 
  <p>Click the button to reveal your new band name.</p>
 
@@ -22,16 +89,28 @@
 
  <!-- Band name will appear here -->
 
+<div class="relative">
+    <div class="absolute -inset-5">
+        <div
+            class="w-full h-full max-w-sm mx-auto lg:mx-0 opacity-30 blur-lg bg-gradient-to-r from-yellow-400 via-pink-500 to-green-600">
+        </div>
+    </div>
+    <a href="#" title=""
+        class="relative z-10 inline-flex items-center justify-center w-full px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+        role="button">
+        Band Name Picker
+    </a>
+</div>
+
+
+ </div>
+
+ </div>
+
  </div>
 
 
-
- <button id="generate-btn">Generate Name</button>
-
- </div>
-
-
-
+<script src="band.js"></script>
 
  </body>
 
