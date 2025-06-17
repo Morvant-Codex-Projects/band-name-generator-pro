@@ -24,7 +24,7 @@ const nouns = ["Penguins", "Wizards", "Socks", "Robots", "Bananas", "Crows", "Ni
  // Format: "The Adjective Noun"
  // Then update the DOM to show the band name inside #band-name
    const bandNameElement = document.getElementById("band-name");
-   bandNameElement.textContent = 'The ' + getAdjective() + getNoun();
+   bandNameElement.textContent = 'The ' + getAdjective() + ' ' + getNoun();
  }
 
  document.getElementById("generate-btn").addEventListener("click",generateBandName);
